@@ -6,7 +6,7 @@ import { BurgersService } from '../swagger/api/burgers.service';
   templateUrl: './burger.component.html',
   styleUrls: ['./burger.component.css']
 })
-export class BurgerComponent implements OnInit {
+export class BurgerListComponent implements OnInit {
   burgers;
   constructor(private burgerService: BurgersService) { }
 
