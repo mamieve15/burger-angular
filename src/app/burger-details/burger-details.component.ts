@@ -9,7 +9,7 @@ import { BurgersService } from '../swagger/api/burgers.service';
   templateUrl: './burger-details.component.html',
   styleUrls: ['./burger-details.component.css']
 })
-export class BurgerDetailComponent implements OnInit {
+export class BurgerDetailsComponent implements OnInit {
 
   burger;
 
