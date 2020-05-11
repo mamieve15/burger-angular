@@ -1,22 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { BurgersService } from '../swagger/api/burgers.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-burger',
   templateUrl: './burger.component.html',
   styleUrls: ['./burger.component.css']
 })
-export class BurgerListComponent implements OnInit {
-  burgers;
-  constructor(private burgerService: BurgersService) { }
+export class BurgerComponent implements OnInit {
 
-  ngOnInit(): void {
-    this.getBurgers();
-  }
+  @Input() id:number;
+  @Input() name:string;
+  @Input() price:number;
+  @Input() image: string;
+  @Input() index:number;
 
-  getBurgers() : void {
-    this.burgers = this.burgerService.listBurgers()
-        .subscribe(burgers => this.burgers = burgers);
-  }
+  ngOnInit(): void {}
 
 }

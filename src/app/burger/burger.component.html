@@ -1,22 +1,16 @@
-<div>
-  <ul id="burgers">
-    <div *ngFor="let burger of burgers">
-      <mat-card class="example-card">
+<div class="main-div">
+    <mat-card class="burger-card">
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{burger.name}}</mat-card-title>
-          <mat-card-subtitle>Burger n° {{burger.id}}</mat-card-subtitle>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{name}}</mat-card-title>
+            <mat-card-subtitle><b>Prix: {{price}} €</b></mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="{{burger.image}}" alt="Photo of a Burger">
-        <mat-card-content>
-          <p>
-            Prix : {{burger.price}} €
-          </p>
-        </mat-card-content>
+
+        <img mat-card-image src={{image}} alt="Photo of a Burger">
+  
         <mat-card-actions>
-          <a mat-raised-button color="basic" routerLink="burger/{{burger.id}}">Details</a>
+            <button mat-button [routerLink]="[id]">En savoir plus</button>
+            <button mat-button>Partager</button>
         </mat-card-actions>
-      </mat-card>
-    </div>
-  </ul>
+    </mat-card>
 </div>

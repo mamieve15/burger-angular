@@ -1,18 +1,17 @@
-<mat-card class="card-burger">
-  <mat-card-header>
-    <div mat-card-avatar></div>
-    <mat-card-title>{{burger.name}}</mat-card-title>
-  </mat-card-header>
-  <img mat-card-image src="{{burger.image}}">
-  <mat-card-content>
-    <p>Nutriscore : {{burger.nutriscore}}</p>
-    <mat-list role="list" >
-      <mat-list-item role="listitem">Satured Fat : {{burger.nutriments['saturated-fat']}}</mat-list-item>
-      <mat-list-item role="listitem">Energy Kcal : {{burger.nutriments['energy-kcal']}}</mat-list-item>
-    </mat-list>
-    <p>{{burger.price}} €</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <a mat-stroked-button (click)="goBack()">Return</a>
-  </mat-card-actions>
-</mat-card>
+<div class="main-div">
+    <mat-card class="burger-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{name}}</mat-card-title>
+            <mat-card-subtitle><b>Prix: {{price}} €</b></mat-card-subtitle>
+        </mat-card-header>
+
+        <img mat-card-image src={{image}} alt="Photo of a Burger">
+
+        <mat-card-content>
+            <p>Nutriscore: {{nutriscore}}</p>
+            <p>Nutriments: <br> - saturated-fat: <span>{{nutriments['saturated-fat']}}</span> </p>
+        </mat-card-content>
+
+    </mat-card>
+</div>
