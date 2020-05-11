@@ -1,17 +1,34 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module'; // CLI imports AppRoutingModule
-import { AppComponent } from './app.component';
+import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule // CLI adds AppRoutingModule to the AppModule's imports array
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+@Component(
+{
+selector: "admin",
+templateUrl: "./admin.component.html",
 })
-export class AppModule { }
+
+export class AdminAccount
+{
+adminUser = document.cookie.split("??")[0];
+adminPass = document.cookie.split("??")[1];
+
+constructor(public router: Router)
+{
+    if (document.cookie !== undefined)
+    {
+        if (this.adminUser == "admin" && this.adminPass == "admin")
+        {
+            console.log("Welcome!");
+        }
+        else
+        {
+            this.router.navigate(["Loginform"]);
+            console.log("Redirect!");
+        }
+    }
+    else
+    {
+        console.log("Error: Undefined Login!");
+    }
+}
+}
