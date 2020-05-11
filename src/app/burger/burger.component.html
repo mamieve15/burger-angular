@@ -1,17 +1,22 @@
-<mat-grid-list cols="6" rowHeight="200px">
-  <mat-grid-tile [colspan]="2" [rowspan]="3" *ngFor="let burger of burgerList">
-    <mat-card class="card-list-burger">
-      <mat-card-header>
-        <div mat-card-avatar></div>
-        <mat-card-title>{{burger.name}}</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="{{burger.image}}">
-      <mat-card-content>
-        <p>{{burger.price}} €</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-stroked-button routerLink="burger/{{burger.id}}">View</a>
-      </mat-card-actions>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+<div>
+  <ul id="burgers">
+    <div *ngFor="let burger of burgers">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{burger.name}}</mat-card-title>
+          <mat-card-subtitle>Burger n° {{burger.id}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{burger.image}}" alt="Photo of a Burger">
+        <mat-card-content>
+          <p>
+            Prix : {{burger.price}} €
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-raised-button color="basic" routerLink="burger/{{burger.id}}">Details</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ul>
+</div>

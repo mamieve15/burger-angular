@@ -1,32 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BurgerComponent } from './burger/burger.component';
-import { BurgerDetailComponent } from './burger-details/burger-details.component';
-
-import { HttpClientModule } from '@angular/common/http';
-
 import { ApiModule } from './swagger';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { ListBurgerComponent } from './burger/burger.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatExpansionModule} from '@angular/material/expansion';
 
-
+import { BurgerDetailComponent } from './burger-details/burger-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BurgerComponent,
+    ListBurgerComponent,
     BurgerDetailComponent
   ],
   imports: [
     BrowserModule,
+    ApiModule,
+    HttpClientModule,
+    AppRoutingModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-    HttpClientModule,
-    ApiModule,
-
+    MatCardModule,
+    MatButtonModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
