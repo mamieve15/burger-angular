@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BurgerComponent } from './burger/burger.component';
-import { BurgerDetailsComponent } from './burger-details/burger-details.component';
+import { BurgerDetailComponent } from './burger-details/burger-details.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,7 +17,7 @@ import { ApiModule } from './swagger';
   declarations: [
     AppComponent,
     BurgerComponent,
-    BurgerDetailsComponent
+    BurgerDetailComponent
   ],
   imports: [
     BrowserModule,
