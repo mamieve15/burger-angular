@@ -1,10 +1,4 @@
-.example-card {
-    max-width: 400px;
-    margin-bottom: 2em;
-    background-color: antiquewhite;
-  }
-  
-  .example-header-image {
-    background-image: url('https://images.vexels.com/media/users/3/144007/isolated/lists/6150d0cfaabb9b2fc29008ee0f8cf099-burger-fast-food-stroke-icon.png');
-    background-size: cover;
-  }
+  .card-list-burger {
+  max-width: 400px;
+  background-color: rgb(243, 171, 201);
+}
