@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BurgersService } from '../swagger/api/burgers.service';
 
 @Component({
-  selector: 'app-burgers',
-  templateUrl: './burgers.component.html',
-  styleUrls: ['./burgers.component.css']
+  selector: 'app-burger',
+  templateUrl: './burger.component.html',
+  styleUrls: ['./burger.component.css']
 })
 export class BurgerComponent implements OnInit {
   burgers;
