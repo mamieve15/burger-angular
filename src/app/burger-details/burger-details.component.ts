@@ -1,24 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
-import { BurgersService } from './swagger/api/burger.service';
+import { BurgersService } from '../swagger/api/burgers.service';
 
 @Component({
-  selector: 'app-burger',
-  templateUrl: './burger.component.html',
-  styleUrls: ['./burger.component.css']
+  selector: 'app-burger-detail',
+  templateUrl: './burger-details.component.html',
+  styleUrls: ['./burger-details.component.css']
 })
-export class BurgerListComponent implements OnInit {
+export class BurgerDetailComponent implements OnInit {
 
-  burgerList;
+  burger;
 
-  constructor(private burgersService : BurgersService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private burgersService : BurgersService
+    ) { }
 
   ngOnInit(): void {
-    this.getBurgers();
+    this.getBurger();
   }
 
-  getBurgers() : void {
-    this.burgerList = this.burgersService.listBurgers()
-        .subscribe(burgerList => this.burgerList = burgerList);
+  getBurger() : void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.burger = this.burgersService.burgerDetail(id)
+        .subscribe(burger => this.burger = burger);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
