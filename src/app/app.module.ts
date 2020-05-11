@@ -1,34 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-@Component(
-{
-selector: "admin",
-templateUrl: "./admin.component.html",
+import { AppComponent } from './app.component';
+import { ApiModule } from './swagger';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { ListBurgersComponent } from './list-burgers/list-burgers.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatExpansionModule} from '@angular/material/expansion';
+
+import { BurgerDetailsComponent } from './burger-details/burger-details.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ListBurgersComponent,
+    BurgerDetailsComponent
+  ],
+  imports: [
+    BrowserModule,
+    ApiModule,
+    HttpClientModule,
+    AppRoutingModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatExpansionModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-
-export class AdminAccount
-{
-adminUser = document.cookie.split("??")[0];
-adminPass = document.cookie.split("??")[1];
-
-constructor(public router: Router)
-{
-    if (document.cookie !== undefined)
-    {
-        if (this.adminUser == "admin" && this.adminPass == "admin")
-        {
-            console.log("Welcome!");
-        }
-        else
-        {
-            this.router.navigate(["Loginform"]);
-            console.log("Redirect!");
-        }
-    }
-    else
-    {
-        console.log("Error: Undefined Login!");
-    }
-}
-}
+export class AppModule { }
