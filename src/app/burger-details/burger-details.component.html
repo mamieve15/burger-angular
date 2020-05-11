@@ -1,0 +1,26 @@
+<h2>{{burger.name | uppercase}} Details</h2>
+<ul>
+
+
+<mat-expansion-panel class="expansion-panel">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Nutriscore
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  
+    <p>{{burger.nutriscore}}</p>
+  
+  </mat-expansion-panel>
+  <mat-expansion-panel class="expansion-panel">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Nutriments
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  
+    <p>"saturated-fat"  =  {{burger.nutriments['saturated-fat']}}</p>
+  
+  </mat-expansion-panel>
+</ul>
+<a mat-raised-button color="basic" (click)="goBack()">go back</a>
