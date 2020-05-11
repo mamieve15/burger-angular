@@ -11,12 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ApiModule } from './swagger';
 
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatListModule } from '@angular/material/list';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,11 +25,7 @@ import { MatListModule } from '@angular/material/list';
     HttpClientModule,
     ApiModule,
 
-    MatIconModule,
-    MatCardModule,
-    MatButtonModule,
-    MatGridListModule,
-    MatListModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
